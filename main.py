@@ -88,7 +88,6 @@ if user in users and users[user] == password:
             print(line)
 
             for key, value in sorted(occurrence.items()):
-
                 if key in range(10):
                     print(f"  {key}|{'*' * value}{' ' * (20-value)}|{value}")
                 else:
