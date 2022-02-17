@@ -96,10 +96,10 @@ if user in users and users[user] == password:
 
         else:
             print("Input is not in range 1-3!")
-            # terminate
+            exit()
     else:
         print("Input is not integer!")
-        # terminate
+        exit()
 else:
     print("Unregistered user, terminating the program...")
-    # terminate
+    exit()
