@@ -39,6 +39,7 @@ count_upper = 0
 count_lower = 0
 count_numeric = 0
 occurrence = {}
+max_value = 0
 
 user = input("username: ")
 password = input("password: ")
@@ -87,11 +88,15 @@ if user in users and users[user] == password:
             print("LEN|    OCCURRENCES     |NR.")
             print(line)
 
+            for key, value in occurrence.items():
+                if value > max_value:
+                    max_value = value
+
             for key, value in sorted(occurrence.items()):
                 if key in range(10):
-                    print(f"  {key}|{'*' * value}{' ' * (20-value)}|{value}")
+                    print(f"  {key}|{'*' * value}{' ' * (max_value-value)}|{value}")
                 else:
-                    print(f" {key}|{'*' * value}{' ' * (20-value)}|{value}")
+                    print(f" {key}|{'*' * value}{' ' * (max_value-value)}|{value}")
 
         else:
             print("Input is not in range 1-3!")
