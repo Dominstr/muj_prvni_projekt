@@ -85,12 +85,13 @@ if user in users and users[user] == password:
             print(f"There are {count_numeric} numeric strings.")
             print(f"The sum of all the numbers {numeric_sum}")
             print(line)
-            print("LEN|    OCCURRENCES     |NR.")
-            print(line)
 
             for key, value in occurrence.items():
                 if value > max_value:
                     max_value = value
+
+            print(f"LEN|OCCURRENCES{' ' * (max_value - len('OCCURRENCES'))}|NR.")
+            print(line)
 
             for key, value in sorted(occurrence.items()):
                 if key in range(10):
