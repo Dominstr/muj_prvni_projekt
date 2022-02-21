@@ -90,7 +90,10 @@ if user in users and users[user] == password:
                 if value > max_value:
                     max_value = value
 
-            print(f"LEN|OCCURRENCES{' ' * (max_value - len('OCCURRENCES'))}|NR.")
+            if max_value <= len("OCCURRENCES"):
+                print(f"LEN|OCCURRENCES|NR.")
+            else:
+                print(f"LEN|OCCURRENCES{' ' * (max_value - len('OCCURRENCES'))}|NR.")
             print(line)
 
             for key, value in sorted(occurrence.items()):
